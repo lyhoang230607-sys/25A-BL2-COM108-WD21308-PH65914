@@ -5,7 +5,30 @@
 
 int main()
 {
-    printf("Hi there!\n");
+    int n;
+    int mang[100];
+    int i;
+    float tong = 0;
+    float tb;
+    int count = 0;
+    printf("Moi nhap so n: ");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++)
+    {
+        printf("\nMoi nhap mang so nguyen bao gom n phan tu: ");
+        scanf("%d", &mang[i]);
+    }
+    for (i = 0; i < n; i++)
+    {
+        if (mang[i] % 3 == 0) {
+            tong = tong + mang[i];
+            count++;
+        }
+    }
+    tb = tong / count;
+    printf("Gia tri trung binh la: %.1f\n", tb);
+
 }
 
 // Debug/Run chuong trinh: bam "F5" hoac "Debug > Start Debugging" tren menu
