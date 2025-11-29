@@ -2,33 +2,39 @@
 // Chuong trinh phan mem Bat dau thuc thi & Ket thuc o day.
 
 #include <stdio.h>
+void sapXepPhanTuMangMotChieu() {
+	int integerArray[100];
+	int tmp;
+	int length;
+	printf("So luong phan tu mang: ");
+	scanf("%d", &length);
+	printf("Nhap du lieu cho mang %d phan tu\n", length);
+	for (int i = 0; i < length; i++)
+	{
+		printf("mang[%d] = ", i);
+		scanf("%d", &integerArray[i]);
+	}
+	printf("Sap xep tang da du lieu mang %d phan tu\n", length);
+	for (int i = 0; i < length - 1; i++)
+	{
+		if (integerArray[i > integerArray[i + 1]])
+		{
+			tmp = integerArray[i];
+			integerArray[i] = integerArray[i + 1];
+			integerArray[i + 1] = tmp;
+			i = -1;
+		}
+	}
 
+	printf("Nhap du lieu cho mang %d phan tu\n", length);
+	for (int i = 0; i < length; i++)
+	{
+		printf("mang[%d] = %d\n", i, integerArray);
+	}
+}
 int main()
 {
-    int n;
-    int mang[100];
-    int i;
-    float tong = 0;
-    float tb;
-    int count = 0;
-    printf("Moi nhap so n: ");
-    scanf("%d", &n);
-
-    for (i = 0; i < n; i++)
-    {
-        printf("\nMoi nhap mang so nguyen bao gom n phan tu: ");
-        scanf("%d", &mang[i]);
-    }
-    for (i = 0; i < n; i++)
-    {
-        if (mang[i] % 3 == 0) {
-            tong = tong + mang[i];
-            count++;
-        }
-    }
-    tb = tong / count;
-    printf("Gia tri trung binh la: %.1f\n", tb);
-
+    printf("Hi there!\n");
 }
 
 // Debug/Run chuong trinh: bam "F5" hoac "Debug > Start Debugging" tren menu
