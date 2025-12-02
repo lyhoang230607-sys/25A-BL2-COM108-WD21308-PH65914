@@ -2,6 +2,8 @@
 // Chuong trinh phan mem Bat dau thuc thi & Ket thuc o day.
 
 #include <stdio.h>
+#include <math.h>
+#include <string.h>
 void sapXepPhanTuMangMotChieu() {
 	int integerArray[100];
 	int tmp;
@@ -32,9 +34,95 @@ void sapXepPhanTuMangMotChieu() {
 		printf("mang[%d] = %d\n", i, integerArray);
 	}
 }
+void demoMang2Chieu() {
+	char KyTU = 'U';
+	//string- "string.h"
+	char mangKyTu[10];
+	for (int i = 0; i < 10; i++)
+	{
+		scanf(" %c", &mangKyTu[i]);
+		if (mangKyTu[i] == '.')
+		{
+			break;
+		}
+	}
+	printf("\n");
+	//fgets(mangKyTu);
+	for (int i = 0; i < 10; i++)
+	{
+		printf("%c", mangKyTu[i]);
+	}
+	printf("\n");
+	//puts(mangKyTu);
+
+
+	int array[2][3];
+	for (int  i = 0; i < 2; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			printf("Mang [%d] [%d] = ", i, j);
+			scanf("%d", &array[i][j]);
+		}
+
+	}
+	for (int  i = 0; i < 2; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			printf("%d, ",array[i][j]);
+			
+		}
+
+	}
+	printf("\n");
+}
+void lapChucNang(chonChucNang)
+{
+	int tiepTuc = 1;
+	while (tiepTuc == 1)
+	{
+		switch (chonChucNang)
+		{
+		case 1:
+			//kiemTraSoNguyen();
+			break;
+		case 2:
+			//uocChungBoiChung();
+			break;
+		case 3:
+			demoMang2Chieu();
+			break;
+		case 0:
+			return;
+		default:
+			printf("Hay chon lai [0-3]");
+			break;
+		}
+
+		printf("\n");
+		printf("Tiep tuc CN nay? [1=Co | 0=Khong]: ");
+		scanf("%d", &tiepTuc);
+		system("cls");
+	}
+}
 int main()
 {
-  
+	int chonChucNang;
+	do
+	{
+		printf("Menu");
+		printf("\n");
+		printf("1. Kiem Tra So Nguyen");
+		printf("\n");
+		printf("2. TEN chuc nang 2");
+		printf("\n");
+		printf("3. Mang 2 chieu ");
+		printf("\n");
+		printf("Hay chon CN [0-3]: ");
+		scanf("%d", &chonChucNang);
+		lapChucNang(chonChucNang);
+	} while (chonChucNang != 0);
 }
 
 // Debug/Run chuong trinh: bam "F5" hoac "Debug > Start Debugging" tren menu
