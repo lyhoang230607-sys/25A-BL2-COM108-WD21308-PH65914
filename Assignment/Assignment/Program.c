@@ -212,7 +212,10 @@ void chuongTrinhVayTienMuaXe()
 	printf("tong phai tra trong 24 nam: %f\n", tongtra);
 	printf("tra moi thang: %f\n", trathang);
 }
+void sapXepTinhTinXinhVien() 
+{
 
+}
 void gameFPOLY_LOTT()
 {
 	int a, b;
@@ -305,7 +308,7 @@ void lapChucNang(chonChucNang)
 			chuongTrinhVayTienMuaXe();
 			break;
 		case 8:
-			// ten chuc nang so 8
+			sapXepTinhTinXinhVien();
 			break;
 		case 9:
 			gameFPOLY_LOTT();

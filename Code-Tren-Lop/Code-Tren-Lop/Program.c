@@ -35,25 +35,7 @@ void sapXepPhanTuMangMotChieu() {
 	}
 }
 void demoMang2Chieu() {
-	char KyTU = 'U';
-	//string- "string.h"
-	char mangKyTu[10];
-	for (int i = 0; i < 10; i++)
-	{
-		scanf(" %c", &mangKyTu[i]);
-		if (mangKyTu[i] == '.')
-		{
-			break;
-		}
-	}
-	printf("\n");
-	//fgets(mangKyTu);
-	for (int i = 0; i < 10; i++)
-	{
-		printf("%c", mangKyTu[i]);
-	}
-	printf("\n");
-	//puts(mangKyTu);
+	
 
 
 	int array[2][3];
@@ -77,6 +59,64 @@ void demoMang2Chieu() {
 	}
 	printf("\n");
 }
+void demoString() 
+{
+	//string- "string.h"
+	char mangKyTu[50];
+	while (getchar() != '\n');
+
+	printf("Moi nhap du lieu: ");
+
+	fgets(mangKyTu, sizeof(mangKyTu), stdin);
+	//fgets(mangKyTu);
+	printf("%s", mangKyTu);
+	printf("\n");
+	//puts(mangKyTu);
+
+	/*printf("String Length: ");
+	printf("%d", strlen(mangKyTu) - 1);
+	printf("\n");
+	printf("String Compare The Same As: ");
+	printf("%d", strcmp("ABC","abc"));
+	printf("\n");
+	printf("String Compare Less than: ");
+	printf("%d", strcmp("A","C"));
+	printf("\n");
+	printf("String Compare Greater than: ");
+	printf("%d", strcmp("C","A"));
+	printf("\n");*/
+
+	printf("String Reverse (Encryption): ");
+	printf("%s", strrev(mangKyTu));
+	printf("\n");
+	printf("String Reverse (Decryption): ");
+	printf("%s", strrev(mangKyTu));
+	printf("\n");
+	printf("String Lower: ");
+	printf("%s", strlwr(mangKyTu));
+	printf("\n");
+	printf("String Reverse Upper: ");
+	printf("%s", strupr(mangKyTu));
+	printf("\n");
+	printf("Find String in String: ");
+	printf("%s", strstr(mangKyTu, "A"));
+	printf("\n");
+	
+	if (strstr(mangKyTu, "A") != NULL)
+	{
+		printf("Found: ");
+		printf("%s", strstr(mangKyTu, "A"));
+	}
+	else
+	{
+		printf("NOT FOUND");
+	}
+	printf("\n");''
+
+
+}
+
+
 void lapChucNang(chonChucNang)
 {
 	int tiepTuc = 1;
@@ -92,6 +132,9 @@ void lapChucNang(chonChucNang)
 			break;
 		case 3:
 			demoMang2Chieu();
+			break;
+		case 4:
+			demoString();
 			break;
 		case 0:
 			return;
@@ -118,6 +161,8 @@ int main()
 		printf("2. TEN chuc nang 2");
 		printf("\n");
 		printf("3. Mang 2 chieu ");
+		printf("\n");
+		printf("4. demo string ");
 		printf("\n");
 		printf("Hay chon CN [0-3]: ");
 		scanf("%d", &chonChucNang);
