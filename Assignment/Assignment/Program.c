@@ -212,9 +212,76 @@ void chuongTrinhVayTienMuaXe()
 	printf("tong phai tra trong 24 nam: %f\n", tongtra);
 	printf("tra moi thang: %f\n", trathang);
 }
+struct Sinhvien{
+	char hoTen[50];
+	float diemTB;
+};
 void sapXepTinhTinXinhVien() 
 {
+	
+	struct Sinhvien dsSv[5];
 
+	int i;
+	for ( i = 0; i < 5; i++)
+	{
+		printf("Moi nhap ten sinh vien thu %d: ", i + 1);
+		fgets(dsSv[i].hoTen, sizeof(dsSv[i].hoTen), stdin);
+		printf("Moi nhap diem tb sinh vien thu %d: ", i + 1);
+		scanf("%.1f", &dsSv[i].diemTB);
+		getchar();
+	}
+	int j;
+	for ( i = 0; i < 4; i++)
+	{
+		for ( j = 0; j < 5; j++)
+		{
+			if (dsSv[i].diemTB < dsSv[j].diemTB)
+			{
+				float diemTam = dsSv[i].diemTB;
+				dsSv[i].diemTB = dsSv[j].diemTB;
+				dsSv[j].diemTB = diemTam;
+
+				char tenTam[50];
+				strcpy(tenTam, dsSv[i].hoTen);
+				strcpy(dsSv[i].hoTen, dsSv[j].hoTen);
+				strcpy(dsSv[j].hoTen, tenTam);
+			}
+
+
+		}
+
+
+
+	}
+
+
+
+	printf("Danh sach sinh vien \n");\
+		for ( i = 0; i < 5; i++)
+		{
+			printf("Ho ten: %s", dsSv[i].hoTen);
+			printf("Diem TB: %.1f", dsSv[i].diemTB);
+			if (dsSv[i].diemTB >= 9)
+			{
+				printf("Sinh vien dat hoc luc xuat sac\n");
+			}
+			else if (dsSv[i].diemTB >= 8)
+			{
+				printf("Sinh vien dat hoc luc gioi\n");
+			}
+			else if (dsSv[i].diemTB >= 6.5)
+			{
+				printf("Sinh vien dat hoc luc kha\n");
+			}
+			else if (dsSv[i].diemTB >= 5)
+			{
+				printf("Sinh vien dat hoc luc TB\n");
+			}
+			else
+			{
+				printf("Sinh vien dat hoc luc yeu\n");
+			}
+		}
 }
 void gameFPOLY_LOTT()
 {
