@@ -39,7 +39,7 @@ char tenThuCung[50];
 };
 void thongTinThuCung()
 {
-	struct thuCung tC;
+	struct thuCung tC[3];
 
 	int i;
 	int tuoi;
@@ -48,23 +48,26 @@ void thongTinThuCung()
 	{
 		printf("Moi nhap ten thu cung: ");
 		while (getchar() != '\n');
-		fgets(tC.tenThuCung, sizeof(tC.tenThuCung), stdin);
+		fgets(tC[i].tenThuCung, sizeof(tC[i].tenThuCung), stdin);
 		printf("Moi nhap ma thu cung: ");
-		scanf("%d", &tC.maThuCung);
+		scanf("%d", &tC[i].maThuCung);
 		printf("Moi nhap nam sinh: ");
-		scanf("%d", &tC.namSinh);
+		scanf("%d", &tC[i].namSinh);
 
 
 	}
 
+	tuoi = 2025 - tC[i].namSinh;
 
-
-	tuoi = 2025 - tC.namSinh;
-
-
-	printf("ten thu cung la: %s", tC.tenThuCung);
-	printf("Ma thu cung la: %d\n", tC.maThuCung);
+	for ( i = 0; i < 3; i++)
+	{
+printf("ten thu cung la: %s", tC[i].tenThuCung);
+	printf("Ma thu cung la: %d\n", tC[i].maThuCung);
 	printf("Tuoi thu cung: %d\n", tuoi);
+	}
+
+
+	
 
 
 
