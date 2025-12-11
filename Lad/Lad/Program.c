@@ -59,11 +59,11 @@ void thongTinThuCung()
 
 	tuoi = 2025 - tC[i].namSinh;
 
-	for ( i = 0; i < 3; i++)
+	for (i = 0; i < 3; i++)
 	{
-printf("ten thu cung la: %s", tC[i].tenThuCung);
-	printf("Ma thu cung la: %d\n", tC[i].maThuCung);
-	printf("Tuoi thu cung: %d\n", tuoi);
+		printf("ten thu cung la: %s", tC[i].tenThuCung);
+		printf("Ma thu cung la: %d\n", tC[i].maThuCung);
+		printf("Tuoi thu cung: %d\n", tuoi);
 	}
 
 
